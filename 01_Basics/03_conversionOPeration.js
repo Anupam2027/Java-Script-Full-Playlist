@@ -19,7 +19,7 @@ let someNumber=55
 let stringNumber=String(someNumber);
 console.log(typeof stringNumber);
 console.log(stringNumber);
-/****************************************Operators**************************************/
+/****************************************Operations**************************************/
 let value =5
 let negValue =-value;
 console.log(negValue);
