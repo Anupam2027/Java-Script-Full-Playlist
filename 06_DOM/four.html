@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code || DOM</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>Java Script</li>
+    </ul>
+</body>
+<script>
+
+    //This is normal approach where ,when we call this function every time tree was traverse ,which increase complexity
+      function Addli (lang){
+        const li = document.createElement("li");
+        li.innerHTML =`${lang}`
+        document.querySelector(".language").appendChild(li)
+      }
+      Addli("python");
+      Addli("typescript");
+      Addli("cplusplus");
+
+      //optimize approach where ,tree traversal does not happended ,we always prefer that approach ---> where we use in place of "innerHTML" ,"createTextNode"
+      function addOptiLang (lang){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector(".language").appendChild(li)
+      } 
+      addOptiLang("Go-language");
+
+      //Editing
+      const newli = document.querySelector("li:nth-child(2)")
+      console.log(newli);
+    //   newli.innerHTML = "mojo"  ----->but this is not good appoach
+    const newli2 =  document.createElement('li')
+    newli2.textContent = "mojo"
+    newli.replaceWith(newli2)
+
+    //editing another technique
+    const firstlang = document.querySelector("li:first-child") 
+    firstlang.outerHTML = '<li>Typescript </li>'
+
+    //remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
