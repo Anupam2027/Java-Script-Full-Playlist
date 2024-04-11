@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JavaScript</title>
+</head>
+<body>
+    <h1>Chai aur code </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout---->this is a function which work on wed api ,its function is execute any function in any time interval in only one time
+    //syntax--1
+    setTimeout(function () {
+     console.log("Anupam");
+    }, 2000);
+    //syntax--2
+    let anu= function (){
+        console.log("anupam");
+    }
+
+    setTimeout(anu,3000)
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+    const changeMe = setTimeout(changeText,4000)
+
+    //now we want stop this settime method so for this we use one new fuction which is
+    //cleaTimeout()---> this want to reference of function which setTimeout() stop ,,so for this
+    //we put setTimeout function in one verible ,but thats mean not that if we put this in verible its not working.its still working
+
+    document.querySelector("#stop").addEventListener('click',function(){
+       clearTimeout(changeMe)
+       console.log("STOPPED");
+    })
+
+</script>
+</html>
