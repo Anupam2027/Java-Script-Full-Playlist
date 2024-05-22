@@ -18,11 +18,12 @@ function User (userName,loggedInCount,sigin){
      this.userName = userName;
      this.loggedInCount = loggedInCount;
      this.sigin = sigin;
+      //return this;
      this.greeting = function (){
         console.log(`username ${this.userName}`);
      }
 }
- const userone = new User("Sonu",5,true);
- const usertwo = new User("Anupam",8,false);
- console.log(userone);
+ const userone = new User("anu",5,true);     //constructor
+ const usertwo = new User("Anupam",8,false);  //constructor 
+ console.log(userone.constructor);   //constructor method is give the own references like here function which name is User
  console.log(usertwo);
